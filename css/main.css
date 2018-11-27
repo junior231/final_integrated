@@ -1,18 +1,6 @@
 @charset "UTF-8";
 /* CSS Document */
 
-/*Remove this rule, this is only for demo purposes to make the boxes black with white text
-The line height on the <p> tag gives each box a height value*/
-
-p
-{
-	color: #fff;
-	line-height: 100px;
-	background: #000;
-	text-align: center;
-	margin: 0;
-}
-
 /*basic reset*/
 /*browsers have built in values for elements so we'll reset a few things to zero, you can add to this or remove items as needed*/
 
@@ -35,7 +23,9 @@ body
 {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 12px;
-	color: #333;
+	color: #000000;
+	background-color: #DFDBE5;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='charlie-brown' fill='%239C92AC' fill-opacity='0.4'%3E%3Cpath d='M9.8 12L0 2.2V.8l10 10 10-10v1.4L10.2 12h-.4zm-4 0L0 6.2V4.8L7.2 12H5.8zm8.4 0L20 6.2V4.8L12.8 12h1.4zM9.8 0l.2.2.2-.2h-.4zm-4 0L10 4.2 14.2 0h-1.4L10 2.8 7.2 0H5.8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 
@@ -65,111 +55,208 @@ a:hover, a:active
 {
 	background-color: #000;
 	height: 20px;
+
 }
 
 /*Site Container*/
 /*This is essentially a box that we place the whole site in.  
 We center the box using margin 0 auto and give it a fixed width of 920 + 20px + 20px (960px) so it fits on 1024x768 screens.*/
 
-#siteContainer 
+.container 
 {
 	margin: 0 auto;
-	width: 920px;
-	padding-left: 20px;
-	padding-right: 20px;
+	width: 960px;
+	margin-top: 80px;
+	background-color: #fff;
 }
 
 /*This is a flex container*/
-#mainHeader
+.mainHeader
 {
-	margin-top: 40px;
+	border-top: solid 10px #000;
 	padding-bottom: 40px;
 	display: flex;
 	flex-direction: row;
   	justify-content: flex-start;
-	border-bottom: solid 1px #DDD;
+	border-bottom: solid 10px #000;
+	/*background-color: #efdede*/
 }
 
+
+
 /*This is a flex item*/
-#logo
+.logoHeader
 {
 	width: 200px;
+	margin-top: 20px;
+	margin-left: 40px;
+	margin-bottom: 10px;
 }
 
 /*This is also a flex item*/
 /*We use margin left auto to send it all the way to the right*/
-#mainNav 
+.mainNav 
 {
+	width: 500px;
+	height: 25px;
+	margin-top: 80px;
 	margin-left: auto;
+}
+
+.mainNav ul
+{
+	list-style-type: none;
+	padding: 0;
+}
+
+.mainNav ul li
+{
+	display: inline;
+	font-size: 18px;
+	margin-left: 10px;
+}
+
+.mainNav ul li a
+{
+	color: #000000;
+	padding: 2px;
+}
+
+.mainNav ul li a:hover
+{
+	background-color: #000;
+	padding: 5px;
+}
+
+.boxes 
+{
+	margin-top: 40px;
+	border-bottom: solid 1px #DDD;
+	/*padding-bottom: 40px;*/
+	display: flex;
+	flex-direction: row;
+  	justify-content: space-evenly;
+}
+
+.box1
+{
+	height: 550px;
+	width: 400px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	background: url(../images/biryani.jpg);
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.box2
+{
+	height: 550px;
+	width: 400px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	background: url(../images/chicken_veggie.jpg);
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.box1 h2
+{
+	padding: 0px;
+	color: #000000;
+	font-size: 30px;
+	letter-spacing: -1px;
+	vertical-align: top;
+}
+
+#iconNav
+{
+	width: 45px;
+	height: 45px;
+}
+
+.mainFooter
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	background-color: #ccc;
+	height: 125px;
+	background: url(../images/footer_bg.jpg) repeat-x;
+}
+
+.logoNav
+{
+	display: flex;
+	flex-direction: column;
+}
+
+.footerNav ul
+{
+	list-style-type: none;
+	padding: 0;
 	width: 500px;
 }
 
-#promo 
+.footerNav ul li
 {
-	margin-top: 40px;
-	border-bottom: solid 1px #DDD;
-	padding-bottom: 40px;
-	display: flex;
-	flex-direction: row;
-  	justify-content: flex-start;
+	display: inline;
+	margin-right: 25px;
 }
 
-/*Get rid of this, here just to give different height to promo*/
-#promo p 
+.footerNav ul li a
 {
-	line-height: 250px;
+	color: #333;
 }
 
-#promoText 
+.footerNav ul li a:hover
 {
-	width: 600px;
+	color: #999;
 }
 
-#promoImage 
+.logoFooter
 {
-	margin-left: auto;
-	width: 280px;
+	margin-top: 25px;
+	margin-bottom: 20px;
+	margin-left: 20px;
 }
 
-#productInfo 
+.footerNav
 {
-	margin-top: 40px;
-	display: flex;
-	flex-direction: row;
-  	justify-content: space-between;
-	border-bottom: solid 1px #DDD;
-	padding-bottom: 40px;
+	margin-left: 20px;
 }
 
-/*Get rid of this, here just to give different height to productInfo*/
-#productInfo p 
+.socialMedia
 {
-	line-height: 300px;
-}
-
-.productDesc 
-{
+	margin-left: auto; /*push to the other side*/
+	height: 45px;
+	margin-top: 28px;
+	margin-right: 10px;
 	width: 200px;
 }
 
-#mainFooter 
+#iconNav li
 {
-	margin-top: 40px;
-	margin-bottom: 40px;
-	display: flex;
-	flex-direction: row;
-  	justify-content: flex-start;
+	list-style-type: none;
+	padding: 0;
 }
 
-#footerNav 
+#iconNav ul li
 {
-	width: 500px;
+	display: inline;
+	margin-right: 10px;
 }
 
-#copyRight 
+#iconNav li a
 {
-	margin-left: auto;
-	width: 310px;
+	filter: grayscale(100%);
+}
+
+#iconNav li a:hover
+{
+	filter: grayscale(0%);
 }
 
 /*Page 2 - Notice we are using one style sheet for all of the pages*/
